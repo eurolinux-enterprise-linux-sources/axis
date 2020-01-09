@@ -2,7 +2,7 @@
 
 Name:          axis
 Version:       1.2.1
-Release:       7.2%{?dist}
+Release:       7.3%{?dist}
 Epoch:         0
 Summary:       A SOAP implementation in Java
 License:       ASL 2.0
@@ -15,6 +15,8 @@ Patch3:        %{name}-objectweb.patch
 Patch4:        %{name}-%{version}-DH.patch
 Patch5:        %{name}-build_xml.patch
 Patch6:        %{name}-java16.patch
+# CVE-2012-5784: Does not verify that the server hostname matches X.509 certificate name
+Patch7:        %{name}-CVE-2012-5784.patch
 BuildRequires: jpackage-utils >= 0:1.5
 BuildRequires: java-devel
 BuildRequires: ant >= 0:1.6, ant-nodeps
@@ -87,6 +89,7 @@ Documentation for %{name}.
 %patch4
 %patch5
 %patch6 -b .orig
+%patch7 -p1 -b .orig
 
 # Remove provided binaries
 find . -name "*.jar" -exec rm -f {} \;
@@ -180,6 +183,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/*
 
 %changelog
+* Mon Jan 21 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 0:1.2.1-7.3
+- Add missing connection hostname check against X.509 certificate name
+- Resolves: CVE-2012-5784
+
 * Tue Feb 9 2010 Alexander Kurtakov <akurtako@redhat.com> 0:1.2.1-7.2
 - Use apache-tomcat-apis instead of tomcat5-*.
 
