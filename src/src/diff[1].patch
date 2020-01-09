@@ -1,0 +1,232 @@
+Index: org/apache/axis/description/ElementDesc.java
+===================================================================
+RCS file: /home/cvspublic/ws-axis/java/src/org/apache/axis/description/ElementDesc.java,v
+retrieving revision 1.7
+diff -u -r1.7 ElementDesc.java
+--- org/apache/axis/description/ElementDesc.java	18 Nov 2004 17:00:40 -0000	1.7
++++ org/apache/axis/description/ElementDesc.java	17 Mar 2005 13:28:17 -0000
+@@ -34,9 +34,12 @@
+      * By default, element cannot be nillable. */
+     private boolean nillable = false;
+ 
++    /** maxOccurs="unbounded" */
++    private boolean unbounded = false;
++
+     /** If this is an array, this holds the array type */
+     private QName arrayType;
+-    
++
+     public ElementDesc() {
+         super(true);
+     }
+@@ -61,6 +64,14 @@
+         this.maxOccurs = maxOccurs;
+     }
+ 
++    public void setMaxOccursUnbounded(boolean ubnd) {
++        this.unbounded = ubnd;
++    }
++
++    public boolean isMaxOccursUnbounded() {
++        return unbounded;
++    }
++
+     /**
+      * Returns value of nillable property.
+      *
+Index: org/apache/axis/encoding/ser/BeanDeserializer.java
+===================================================================
+RCS file: /home/cvspublic/ws-axis/java/src/org/apache/axis/encoding/ser/BeanDeserializer.java,v
+retrieving revision 1.71
+diff -u -r1.71 BeanDeserializer.java
+--- org/apache/axis/encoding/ser/BeanDeserializer.java	5 Feb 2005 00:14:32 -0000	1.71
++++ org/apache/axis/encoding/ser/BeanDeserializer.java	17 Mar 2005 13:28:18 -0000
+@@ -275,9 +275,8 @@
+ 
+         // Fastpath nil checks...
+         if (context.isNil(attributes)) {
+-            if (propDesc != null && propDesc.isIndexed()) { 
+-                if (!((dSer != null) && (dSer instanceof ArrayDeserializer)) ||
+-                        propDesc.getType().isArray()) {
++            if (propDesc != null && propDesc.isIndexedOrArray()) {
++                if (!((dSer != null) && (dSer instanceof ArrayDeserializer))) {
+                     collectionIndex++;
+                     dSer.registerValueTarget(new BeanPropertyTarget(value,
+                             propDesc, collectionIndex));
+@@ -308,9 +307,12 @@
+             // In this case, we want to use the collectionIndex and make sure
+             // the deserialized value for the child element goes into the
+             // right place in the collection.
+-            if (propDesc.isIndexed() && (
+-                    !(dSer instanceof ArrayDeserializer) || 
+-                    propDesc.getType().isArray())) {
++
++            // list of deserializers that shouldn't use the indexed way to recreate the Bean
++            boolean shouldUseArray = (!(dSer instanceof ArrayDeserializer) &&
++                    !(dSer instanceof Base64Deserializer) &&
++                    !(dSer instanceof HexDeserializer));
++            if (propDesc.isIndexedOrArray() && shouldUseArray) {
+                     collectionIndex++;
+                     dSer.registerValueTarget(new BeanPropertyTarget(value,
+                                                     propDesc, collectionIndex));
+Index: org/apache/axis/encoding/ser/BeanSerializer.java
+===================================================================
+RCS file: /home/cvspublic/ws-axis/java/src/org/apache/axis/encoding/ser/BeanSerializer.java,v
+retrieving revision 1.83
+diff -u -r1.83 BeanSerializer.java
+--- org/apache/axis/encoding/ser/BeanSerializer.java	7 Feb 2005 07:54:04 -0000	1.83
++++ org/apache/axis/encoding/ser/BeanSerializer.java	17 Mar 2005 13:28:18 -0000
+@@ -132,6 +132,8 @@
+                 boolean isOmittable = false;
+                 // isNillable default value depends on the field type
+                 boolean isNillable = Types.isNullable(javaType);
++                // isArray
++                boolean isArray = false;
+ 
+                 // If we have type metadata, check to see what we're doing
+                 // with this field.  If it's an attribute, skip it.  If it's
+@@ -156,6 +158,7 @@
+                         }
+                         isOmittable = element.isMinOccursZero();
+                         isNillable = element.isNillable();
++                        isArray = element.isMaxOccursUnbounded();
+                         xmlType = element.getXmlType();
+                     }
+                 }
+@@ -172,7 +175,7 @@
+ 
+                 // Read the value from the property
+                 if(propertyDescriptor[i].isReadable()) {
+-                    if (!propertyDescriptor[i].isIndexed()) {
++                    if (!propertyDescriptor[i].isIndexed() && !isArray) {
+                         // Normal case: serialize the value
+                         Object propValue =
+                             propertyDescriptor[i].get(value);
+Index: org/apache/axis/wsdl/symbolTable/ElementDecl.java
+===================================================================
+RCS file: /home/cvspublic/ws-axis/java/src/org/apache/axis/wsdl/symbolTable/ElementDecl.java,v
+retrieving revision 1.10
+diff -u -r1.10 ElementDecl.java
+--- org/apache/axis/wsdl/symbolTable/ElementDecl.java	2 Sep 2004 12:15:58 -0000	1.10
++++ org/apache/axis/wsdl/symbolTable/ElementDecl.java	17 Mar 2005 13:28:19 -0000
+@@ -53,20 +53,23 @@
+     private boolean anyElement = false;
+ 
+ 
++    /** Field maxOccursIsUnbounded */
++    private boolean maxOccursIsUnbounded = false;
++
+     /**
+      * Constructor ElementDecl
+-     * 
+-     * @param type 
+-     * @param name 
++     *
++     * @param type
++     * @param name
+      */
+     public ElementDecl(TypeEntry type, QName name) {
+         super(type, name);
+-    }    
++    }
+ 
+     /**
+      * Method getMinOccursIs0
+-     * 
+-     * @return 
++     *
++     * @return
+      */
+     public boolean getMinOccursIs0() {
+         return minOccursIs0;
+@@ -74,17 +77,35 @@
+ 
+     /**
+      * Method setMinOccursIs0
+-     * 
+-     * @param minOccursIs0 
++     *
++     * @param minOccursIs0
+      */
+     public void setMinOccursIs0(boolean minOccursIs0) {
+         this.minOccursIs0 = minOccursIs0;
+     }
+ 
+     /**
++     * Method getMaxOccursIsUnbounded
++     *
++     * @return
++     */
++    public boolean getMaxOccursIsUnbounded() {
++        return maxOccursIsUnbounded;
++    }
++
++    /**
++     * Method setMinOccursIsUnbounded
++     *
++     * @param maxOccursIsUnbounded
++     */
++    public void setMaxOccursIsUnbounded(boolean maxOccursIsUnbounded) {
++        this.maxOccursIsUnbounded = maxOccursIsUnbounded;
++    }
++
++    /**
+      * Method setNillable
+-     * 
+-     * @param nillable 
++     *
++     * @param nillable
+      */
+     public void setNillable(boolean nillable) {
+         this.nillable = nillable;
+Index: org/apache/axis/wsdl/symbolTable/SchemaUtils.java
+===================================================================
+RCS file: /home/cvspublic/ws-axis/java/src/org/apache/axis/wsdl/symbolTable/SchemaUtils.java,v
+retrieving revision 1.52
+diff -u -r1.52 SchemaUtils.java
+--- org/apache/axis/wsdl/symbolTable/SchemaUtils.java	4 Mar 2005 08:43:52 -0000	1.52
++++ org/apache/axis/wsdl/symbolTable/SchemaUtils.java	17 Mar 2005 13:28:19 -0000
+@@ -576,9 +576,9 @@
+                     elem.setAnyElement(true);
+                     v.add(elem);
+                 } else if (localName.equals("element")) {
+-                    ElementDecl elem = processChildElementNode(kid, 
++                    ElementDecl elem = processChildElementNode(kid,
+                                                                symbolTable);
+-                    
++
+                     if (elem != null) {
+                         v.add(elem);
+                     }
+@@ -728,6 +728,13 @@
+                 elem.setMinOccursIs0(true);
+             }
+ 
++            String maxOccurs = Utils.getAttribute(elementNode,
++            "maxOccurs");
++
++            if ((maxOccurs != null) && maxOccurs.equals("unbounded")) {
++                elem.setMaxOccursIsUnbounded(true);
++            }
++
+             elem.setNillable(
+                     JavaUtils.isTrueExplicitly(
+                             Utils.getAttribute(elementNode, "nillable")));
+Index: org/apache/axis/wsdl/toJava/JavaBeanHelperWriter.java
+===================================================================
+RCS file: /home/cvspublic/ws-axis/java/src/org/apache/axis/wsdl/toJava/JavaBeanHelperWriter.java,v
+retrieving revision 1.49
+diff -u -r1.49 JavaBeanHelperWriter.java
+--- org/apache/axis/wsdl/toJava/JavaBeanHelperWriter.java	3 Mar 2005 18:28:35 -0000	1.49
++++ org/apache/axis/wsdl/toJava/JavaBeanHelperWriter.java	17 Mar 2005 13:28:19 -0000
+@@ -368,7 +368,10 @@
+                     if (elem.getMinOccursIs0()) {
+                         pw.println("        elemField.setMinOccurs(0);");
+                     }
++                    if (elem.getMaxOccursIsUnbounded()) {
++                        pw.println("        elemField.setMaxOccursUnbounded(true);");
++                    }
+                     if (elem.getNillable()) {
+                         pw.println("        elemField.setNillable(true);");
+                     } else {
+ 

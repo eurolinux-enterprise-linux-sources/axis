@@ -1,0 +1,119 @@
+Index: org/apache/axis/SOAPPart.java
+===================================================================
+RCS file: /home/cvs/ws-axis/java/src/org/apache/axis/SOAPPart.java,v
+retrieving revision 1.74
+diff -u -r1.74 SOAPPart.java
+--- org/apache/axis/SOAPPart.java	29 Jul 2004 21:40:26 -0000	1.74
++++ org/apache/axis/SOAPPart.java	7 Sep 2004 21:05:41 -0000
+@@ -49,6 +49,7 @@
+ import org.xml.sax.SAXException;
+ 
+ import javax.xml.soap.SOAPException;
++import javax.xml.soap.SOAPMessage;
+ import javax.xml.transform.Source;
+ import javax.xml.transform.dom.DOMSource;
+ import javax.xml.transform.stream.StreamSource;
+@@ -246,9 +247,11 @@
+      * @param os  the <code>java.io.OutputStream</code> to write to
+      * @param charEncoding  
+      * @param incXMLDecl  
++     * @throws IOException
++     * @throws SOAPException
+      */
+     public void writeTo(java.io.OutputStream os, String charEncoding,
+-                         String incXMLDecl) throws IOException {
++                         String incXMLDecl) throws IOException, SOAPException {
+         if ( currentForm == FORM_BYTES ) {
+             if(incXMLDecl.equalsIgnoreCase("true")){
+                 os.write(("<?xml version=\"1.0\" encoding=\"" + charEncoding +
+@@ -264,10 +267,6 @@
+         } else {
+             Writer writer = new OutputStreamWriter(os,charEncoding);
+             writer = new BufferedWriter(new PrintWriter(writer));
+-    
+-            if(incXMLDecl.equalsIgnoreCase("true")){
+-                writer.write("<?xml version=\"1.0\" encoding=\"" + charEncoding +"\"?>");
+-            }
+             writeTo(writer);
+             writer.flush();
+         }
+@@ -277,9 +276,27 @@
+      * Write the contents to the specified writer.
+      *
+      * @param writer  the <code>Writer</code> to write to
++     * @throws SOAPException
+      */
+-    public void writeTo(Writer writer) throws IOException {
+-
++    public void writeTo(Writer writer) throws IOException, SOAPException {
++        MessageContext msgContext = msgObject.getMessageContext();
++        String charEncoding = XMLUtils.getEncoding(msgObject, msgContext);;
++        // write the xml declaration header
++        boolean includeXmlDeclaration = false;
++        if (msgContext != null) {
++            Boolean shouldSendDecl = (Boolean) msgContext.getProperty(
++                AxisEngine.PROP_XML_DECL);
++            if (shouldSendDecl != null) {
++                includeXmlDeclaration = shouldSendDecl.booleanValue();
++            }
++        }
++        String incXMLDecl = (String) msgObject.getProperty(SOAPMessage.WRITE_XML_DECLARATION);
++        if(incXMLDecl != null){
++            includeXmlDeclaration = Boolean.getBoolean(incXMLDecl);
++        }
++        if (includeXmlDeclaration){
++            writer.write("<?xml version=\"1.0\" encoding=\"" + charEncoding +"\"?>");
++        }
+         if ( currentForm == FORM_FAULT ) {
+             AxisFault env = (AxisFault)currentMessage;
+             try {
+Index: org/apache/axis/message/SAXOutputter.java
+===================================================================
+RCS file: /home/cvs/ws-axis/java/src/org/apache/axis/message/SAXOutputter.java,v
+retrieving revision 1.25
+diff -u -r1.25 SAXOutputter.java
+--- org/apache/axis/message/SAXOutputter.java	18 May 2004 08:04:56 -0000	1.25
++++ org/apache/axis/message/SAXOutputter.java	7 Sep 2004 21:05:41 -0000
+@@ -41,15 +41,15 @@
+     }
+     
+     public void startDocument() throws SAXException {
+-        try {
+-			context.writeString("<?xml version=\"1.0\" encoding=\"");
+-	        String encoding = XMLUtils.getEncoding(context.getMessageContext());
+-	        context.writeString(encoding);
+-	        context.writeString("\"?>\n");
+-	        context.setSendDecl(false);
+-		} catch (IOException e) {
+-			throw new SAXException(e);
+-		}
++//        try {
++//			context.writeString("<?xml version=\"1.0\" encoding=\"");
++//	        String encoding = XMLUtils.getEncoding(context.getMessageContext());
++//	        context.writeString(encoding);
++//	        context.writeString("\"?>\n");
++//	        context.setSendDecl(false);
++//		} catch (IOException e) {
++//			throw new SAXException(e);
++//		}
+     }
+     
+     public void endDocument() throws SAXException {
+Index: org/apache/axis/transport/http/HTTPSender.java
+===================================================================
+RCS file: /home/cvs/ws-axis/java/src/org/apache/axis/transport/http/HTTPSender.java,v
+retrieving revision 1.118
+diff -u -r1.118 HTTPSender.java
+--- org/apache/axis/transport/http/HTTPSender.java	4 Jun 2004 12:05:48 -0000	1.118
++++ org/apache/axis/transport/http/HTTPSender.java	7 Sep 2004 21:05:41 -0000
+@@ -350,7 +350,9 @@
+         if (mimeHeaders != null) {
+             for (Iterator i = mimeHeaders.getAllHeaders(); i.hasNext(); ) {
+                 MimeHeader mimeHeader = (MimeHeader) i.next();
+-                if (mimeHeader.getName().equals(HTTPConstants.HEADER_CONTENT_TYPE)) {
++                String headerName = mimeHeader.getName();
++                if (headerName.equals(HTTPConstants.HEADER_CONTENT_TYPE)
++                        || headerName.equals(HTTPConstants.HEADER_SOAP_ACTION)) {
+                 	continue;
+                 }
+                 header2.append(mimeHeader.getName())

@@ -1,0 +1,1251 @@
+=======================================================
+= Elapsed: 8152 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <operation name="echoVoid" qname="operNS:echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </operation>
+      <operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://schemas.xmlsoap.org/soap/encoding/">
+        <parameter qname="pns:inputBase64" type="tns:base64" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </operation>
+      <operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" xmlns:operNS="http://soapinterop.org">
+      </operation>
+      <parameter name="allowedMethods" value="echoAnyElement echoChoice echoNestedMultiOccurs echoVoid echoFloat echoHexBinary echoSimpleTypesAsComplexType echoComplexTypeMultiOccurs echoInteger echoFloatMultiOccurs echoDate echoDecimal echoString echoComplexTypeAsSimpleTypes echoBase64 echoAnyType echoVoidSoapHeader echoEnum echoBoolean echoStringMultiOccurs echoComplexType echoNestedComplexType echoIntegerMultiOccurs"/>
+
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElement_inputAny" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElementResponse_return" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+  </service>
+</deployment> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin>Done processing</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 1222 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><undeployment xmlns="http://xml.apache.org/axis/wsdd/">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <service name="Round4XSDTestSoap"/>
+</undeployment> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin>Done processing</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 121 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin> quitting.</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 10255 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <operation name="echoVoid" qname="operNS:echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </operation>
+      <operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" xmlns:operNS="http://soapinterop.org">
+      </operation>
+      <parameter name="allowedMethods" value="echoAnyElement echoChoice echoNestedMultiOccurs echoVoid echoFloat echoHexBinary echoSimpleTypesAsComplexType echoComplexTypeMultiOccurs echoInteger echoFloatMultiOccurs echoDate echoDecimal echoString echoComplexTypeAsSimpleTypes echoBase64 echoAnyType echoVoidSoapHeader echoEnum echoBoolean echoStringMultiOccurs echoComplexType echoNestedComplexType echoIntegerMultiOccurs"/>
+
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElement_inputAny" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElementResponse_return" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+  </service>
+</deployment> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin>Done processing</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 130 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin> quitting.</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 6860 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <operation name="echoVoid" qname="operNS:echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </operation>
+      <operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" xmlns:operNS="http://soapinterop.org">
+      </operation>
+      <parameter name="allowedMethods" value="echoAnyElement echoChoice echoNestedMultiOccurs echoVoid echoFloat echoHexBinary echoSimpleTypesAsComplexType echoComplexTypeMultiOccurs echoInteger echoFloatMultiOccurs echoDate echoDecimal echoString echoComplexTypeAsSimpleTypes echoBase64 echoAnyType echoVoidSoapHeader echoEnum echoBoolean echoStringMultiOccurs echoComplexType echoNestedComplexType echoIntegerMultiOccurs"/>
+
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElement_inputAny" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElementResponse_return" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+  </service>
+</deployment> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin>Done processing</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 110 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin> quitting.</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 6319 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <operation name="echoVoid" qname="operNS:echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </operation>
+      <operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" xmlns:operNS="http://soapinterop.org">
+      </operation>
+      <parameter name="allowedMethods" value="echoAnyElement echoChoice echoNestedMultiOccurs echoVoid echoFloat echoHexBinary echoSimpleTypesAsComplexType echoComplexTypeMultiOccurs echoInteger echoFloatMultiOccurs echoDate echoDecimal echoString echoComplexTypeAsSimpleTypes echoBase64 echoAnyType echoVoidSoapHeader echoEnum echoBoolean echoStringMultiOccurs echoComplexType echoNestedComplexType echoIntegerMultiOccurs"/>
+
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElement_inputAny" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElementResponse_return" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+  </service>
+</deployment> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin>Done processing</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 120 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin> quitting.</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 6069 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <operation name="echoVoid" qname="operNS:echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </operation>
+      <operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </operation>
+      <operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </operation>
+      <operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" xmlns:operNS="http://soapinterop.org">
+      </operation>
+      <parameter name="allowedMethods" value="echoAnyElement echoChoice echoNestedMultiOccurs echoVoid echoFloat echoHexBinary echoSimpleTypesAsComplexType echoComplexTypeMultiOccurs echoInteger echoFloatMultiOccurs echoDate echoDecimal echoString echoComplexTypeAsSimpleTypes echoBase64 echoAnyType echoVoidSoapHeader echoEnum echoBoolean echoStringMultiOccurs echoComplexType echoNestedComplexType echoIntegerMultiOccurs"/>
+
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElement_inputAny" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi._echoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.__echoAnyElementResponse_return" xmlns:ns="http://soapinterop.org/"/>
+      <typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+  </service>
+</deployment> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin>Done processing</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 120 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/> </soapenv:Body>
+</soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body><Admin> quitting.</Admin> </soapenv:Body>
+</soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 2328 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:operNS="http://soapinterop.org" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/" xmlns:ns="http://soapinterop.org/" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <ns1:service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <ns1:parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <ns1:parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <ns1:parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <ns1:parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="typeMappingVersion" value="1.2"/>
+      <ns1:operation name="echoVoid" qname="operNS:echoVoid" soapAction="http://soapinterop.org/echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </ns1:operation>
+      <ns1:operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoInteger" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloat" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoString" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" soapAction="http://soapinterop.org/echoBase64" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" soapAction="http://soapinterop.org/echoDate" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoIntegerMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloatMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoStringMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexTypeMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" soapAction="http://soapinterop.org/echoDecimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" soapAction="http://soapinterop.org/echoBoolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" soapAction="http://soapinterop.org/echoHexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" soapAction="http://soapinterop.org/echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <ns1:parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoSimpleTypesAsComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" soapAction="http://soapinterop.org/echoNestedComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" soapAction="http://soapinterop.org/echoNestedMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" soapAction="http://soapinterop.org/echoChoice" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" soapAction="http://soapinterop.org/echoEnum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" soapAction="http://soapinterop.org/echoAnyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" soapAction="http://soapinterop.org/echoAnyElement" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" soapAction="http://soapinterop.org" xmlns:operNS="http://soapinterop.org">
+      </ns1:operation>
+      <ns1:parameter name="allowedMethods" value="echoComplexTypeAsSimpleTypes echoFloat echoFloatMultiOccurs echoVoid echoDate echoAnyType echoNestedMultiOccurs echoDecimal echoString echoBase64 echoNestedComplexType echoHexBinary echoComplexTypeMultiOccurs echoIntegerMultiOccurs echoComplexType echoInteger echoBoolean echoSimpleTypesAsComplexType echoVoidSoapHeader echoEnum echoChoice echoStringMultiOccurs echoAnyElement"/>
+
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponseReturn" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementInputAny" xmlns:ns="http://soapinterop.org/"/>
+  </ns1:service>
+</ns1:deployment></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin>Done processing</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 109 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin> quitting.</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 1938 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:operNS="http://soapinterop.org" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/" xmlns:ns="http://soapinterop.org/" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <ns1:service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <ns1:parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <ns1:parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <ns1:parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <ns1:parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="typeMappingVersion" value="1.2"/>
+      <ns1:operation name="echoVoid" qname="operNS:echoVoid" soapAction="http://soapinterop.org/echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </ns1:operation>
+      <ns1:operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoInteger" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloat" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoString" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" soapAction="http://soapinterop.org/echoBase64" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" soapAction="http://soapinterop.org/echoDate" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoIntegerMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloatMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoStringMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexTypeMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" soapAction="http://soapinterop.org/echoDecimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" soapAction="http://soapinterop.org/echoBoolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" soapAction="http://soapinterop.org/echoHexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" soapAction="http://soapinterop.org/echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <ns1:parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoSimpleTypesAsComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" soapAction="http://soapinterop.org/echoNestedComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" soapAction="http://soapinterop.org/echoNestedMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" soapAction="http://soapinterop.org/echoChoice" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" soapAction="http://soapinterop.org/echoEnum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" soapAction="http://soapinterop.org/echoAnyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" soapAction="http://soapinterop.org/echoAnyElement" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" soapAction="http://soapinterop.org" xmlns:operNS="http://soapinterop.org">
+      </ns1:operation>
+      <ns1:parameter name="allowedMethods" value="echoComplexTypeAsSimpleTypes echoFloat echoFloatMultiOccurs echoVoid echoDate echoAnyType echoNestedMultiOccurs echoDecimal echoString echoBase64 echoNestedComplexType echoHexBinary echoComplexTypeMultiOccurs echoIntegerMultiOccurs echoComplexType echoInteger echoBoolean echoSimpleTypesAsComplexType echoVoidSoapHeader echoEnum echoChoice echoStringMultiOccurs echoAnyElement"/>
+
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponseReturn" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementInputAny" xmlns:ns="http://soapinterop.org/"/>
+  </ns1:service>
+</ns1:deployment></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin>Done processing</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 140 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:undeployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <ns1:service name="Round4XSDTestSoap"/>
+</ns1:undeployment></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin>Done processing</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 109 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin> quitting.</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 1812 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:operNS="http://soapinterop.org" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/" xmlns:ns="http://soapinterop.org/" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <ns1:service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <ns1:parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <ns1:parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <ns1:parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <ns1:parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="typeMappingVersion" value="1.2"/>
+      <ns1:operation name="echoVoid" qname="operNS:echoVoid" soapAction="http://soapinterop.org/echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </ns1:operation>
+      <ns1:operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoInteger" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloat" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoString" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" soapAction="http://soapinterop.org/echoBase64" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" soapAction="http://soapinterop.org/echoDate" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoIntegerMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloatMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoStringMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexTypeMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" soapAction="http://soapinterop.org/echoDecimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" soapAction="http://soapinterop.org/echoBoolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" soapAction="http://soapinterop.org/echoHexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" soapAction="http://soapinterop.org/echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <ns1:parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoSimpleTypesAsComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" soapAction="http://soapinterop.org/echoNestedComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" soapAction="http://soapinterop.org/echoNestedMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" soapAction="http://soapinterop.org/echoChoice" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" soapAction="http://soapinterop.org/echoEnum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" soapAction="http://soapinterop.org/echoAnyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" soapAction="http://soapinterop.org/echoAnyElement" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" soapAction="http://soapinterop.org" xmlns:operNS="http://soapinterop.org">
+      </ns1:operation>
+      <ns1:parameter name="allowedMethods" value="echoComplexTypeAsSimpleTypes echoFloat echoFloatMultiOccurs echoVoid echoDate echoAnyType echoNestedMultiOccurs echoDecimal echoString echoBase64 echoNestedComplexType echoHexBinary echoComplexTypeMultiOccurs echoIntegerMultiOccurs echoComplexType echoInteger echoBoolean echoSimpleTypesAsComplexType echoVoidSoapHeader echoEnum echoChoice echoStringMultiOccurs echoAnyElement"/>
+
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponseReturn" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementInputAny" xmlns:ns="http://soapinterop.org/"/>
+  </ns1:service>
+</ns1:deployment></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin>Done processing</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 125 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin> quitting.</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 1937 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:operNS="http://soapinterop.org" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/" xmlns:ns="http://soapinterop.org/" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <ns1:service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <ns1:parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <ns1:parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <ns1:parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <ns1:parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="typeMappingVersion" value="1.2"/>
+      <ns1:operation name="echoVoid" qname="operNS:echoVoid" soapAction="http://soapinterop.org/echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </ns1:operation>
+      <ns1:operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoInteger" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloat" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoString" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" soapAction="http://soapinterop.org/echoBase64" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" soapAction="http://soapinterop.org/echoDate" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoIntegerMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloatMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoStringMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexTypeMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" soapAction="http://soapinterop.org/echoDecimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" soapAction="http://soapinterop.org/echoBoolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" soapAction="http://soapinterop.org/echoHexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" soapAction="http://soapinterop.org/echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <ns1:parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoSimpleTypesAsComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" soapAction="http://soapinterop.org/echoNestedComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" soapAction="http://soapinterop.org/echoNestedMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" soapAction="http://soapinterop.org/echoChoice" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" soapAction="http://soapinterop.org/echoEnum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" soapAction="http://soapinterop.org/echoAnyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" soapAction="http://soapinterop.org/echoAnyElement" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" soapAction="http://soapinterop.org" xmlns:operNS="http://soapinterop.org">
+      </ns1:operation>
+      <ns1:parameter name="allowedMethods" value="echoComplexTypeAsSimpleTypes echoFloat echoFloatMultiOccurs echoVoid echoDate echoAnyType echoNestedMultiOccurs echoDecimal echoString echoBase64 echoNestedComplexType echoHexBinary echoComplexTypeMultiOccurs echoIntegerMultiOccurs echoComplexType echoInteger echoBoolean echoSimpleTypesAsComplexType echoVoidSoapHeader echoEnum echoChoice echoStringMultiOccurs echoAnyElement"/>
+
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponseReturn" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementInputAny" xmlns:ns="http://soapinterop.org/"/>
+  </ns1:service>
+</ns1:deployment></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin>Done processing</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 109 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin> quitting.</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 1922 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:operNS="http://soapinterop.org" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/" xmlns:ns="http://soapinterop.org/" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+
+  <!-- Services from Round4XSDTest WSDL service -->
+
+  <ns1:service name="Round4XSDTestSoap" provider="java:RPC" style="wrapped" use="literal">
+      <ns1:parameter name="wsdlTargetNamespace" value="http://soapinterop.org/"/>
+      <ns1:parameter name="wsdlServiceElement" value="Round4XSDTest"/>
+      <ns1:parameter name="wsdlServicePort" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="className" value="test.wsdl.interop4.groupi.Round4XSDTestSoapImpl"/>
+      <ns1:parameter name="wsdlPortType" value="Round4XSDTestSoap"/>
+      <ns1:parameter name="typeMappingVersion" value="1.2"/>
+      <ns1:operation name="echoVoid" qname="operNS:echoVoid" soapAction="http://soapinterop.org/echoVoid" xmlns:operNS="http://soapinterop.org/">
+      </ns1:operation>
+      <ns1:operation name="echoInteger" qname="operNS:echoInteger" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoInteger" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloat" qname="operNS:echoFloat" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloat" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoString" qname="operNS:echoString" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoString" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBase64" qname="operNS:echoBase64" returnQName="retNS:return" returnType="rtns:base64Binary" soapAction="http://soapinterop.org/echoBase64" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBase64" type="tns:base64Binary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoDate" qname="operNS:echoDate" returnQName="retNS:return" returnType="rtns:dateTime" soapAction="http://soapinterop.org/echoDate" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDate" type="tns:dateTime" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexType" qname="operNS:echoComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoIntegerMultiOccurs" qname="operNS:echoIntegerMultiOccurs" returnQName="retNS:return" returnType="rtns:int" soapAction="http://soapinterop.org/echoIntegerMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputIntegerMultiOccurs" type="tns:ArrayOfInt" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoFloatMultiOccurs" qname="operNS:echoFloatMultiOccurs" returnQName="retNS:return" returnType="rtns:float" soapAction="http://soapinterop.org/echoFloatMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputFloatMultiOccurs" type="tns:ArrayOfFloat" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoStringMultiOccurs" qname="operNS:echoStringMultiOccurs" returnQName="retNS:return" returnType="rtns:string" soapAction="http://soapinterop.org/echoStringMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputStringMultiOccurs" type="tns:ArrayOfString" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeMultiOccurs" qname="operNS:echoComplexTypeMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoComplexTypeMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexTypeMultiOccurs" type="tns:ArrayOfSOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoDecimal" qname="operNS:echoDecimal" returnQName="retNS:return" returnType="rtns:decimal" soapAction="http://soapinterop.org/echoDecimal" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputDecimal" type="tns:decimal" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoBoolean" qname="operNS:echoBoolean" returnQName="retNS:return" returnType="rtns:boolean" soapAction="http://soapinterop.org/echoBoolean" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputBoolean" type="tns:boolean" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoHexBinary" qname="operNS:echoHexBinary" returnQName="retNS:return" returnType="rtns:hexBinary" soapAction="http://soapinterop.org/echoHexBinary" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputHexBinary" type="tns:hexBinary" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoComplexTypeAsSimpleTypes" qname="operNS:echoComplexTypeAsSimpleTypes" soapAction="http://soapinterop.org/echoComplexTypeAsSimpleTypes" xmlns:operNS="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+        <ns1:parameter mode="OUT" qname="pns:outputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter mode="OUT" qname="pns:outputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoSimpleTypesAsComplexType" qname="operNS:echoSimpleTypesAsComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexType" soapAction="http://soapinterop.org/echoSimpleTypesAsComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputString" type="tns:string" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputInteger" type="tns:int" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <ns1:parameter qname="pns:inputFloat" type="tns:float" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedComplexType" qname="operNS:echoNestedComplexType" returnQName="retNS:return" returnType="rtns:SOAPComplexTypeComplexType" soapAction="http://soapinterop.org/echoNestedComplexType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPComplexTypeComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoNestedMultiOccurs" qname="operNS:echoNestedMultiOccurs" returnQName="retNS:return" returnType="rtns:SOAPMultiOccursComplexType" soapAction="http://soapinterop.org/echoNestedMultiOccurs" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputComplexType" type="tns:SOAPMultiOccursComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoChoice" qname="operNS:echoChoice" returnQName="retNS:return" returnType="rtns:ChoiceComplexType" soapAction="http://soapinterop.org/echoChoice" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputChoice" type="tns:ChoiceComplexType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoEnum" qname="operNS:echoEnum" returnQName="retNS:return" returnType="rtns:Enum" soapAction="http://soapinterop.org/echoEnum" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/xsd">
+        <ns1:parameter qname="pns:inputEnum" type="tns:Enum" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/xsd"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyType" qname="operNS:echoAnyType" returnQName="retNS:return" returnType="rtns:anyType" soapAction="http://soapinterop.org/echoAnyType" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://www.w3.org/2001/XMLSchema">
+        <ns1:parameter qname="pns:inputAnyType" type="tns:anyType" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </ns1:operation>
+      <ns1:operation name="echoAnyElement" qname="operNS:echoAnyElement" returnQName="retNS:return" returnType="rtns:&gt;&gt;echoAnyElementResponse&gt;return" soapAction="http://soapinterop.org/echoAnyElement" xmlns:operNS="http://soapinterop.org/" xmlns:retNS="http://soapinterop.org/" xmlns:rtns="http://soapinterop.org/">
+        <ns1:parameter qname="pns:inputAny" type="tns:&gt;&gt;echoAnyElement&gt;inputAny" xmlns:pns="http://soapinterop.org/" xmlns:tns="http://soapinterop.org/"/>
+      </ns1:operation>
+      <ns1:operation name="echoVoidSoapHeader" qname="operNS:echoVoidSoapHeader" soapAction="http://soapinterop.org" xmlns:operNS="http://soapinterop.org">
+      </ns1:operation>
+      <ns1:parameter name="allowedMethods" value="echoComplexTypeAsSimpleTypes echoFloat echoFloatMultiOccurs echoVoid echoDate echoAnyType echoNestedMultiOccurs echoDecimal echoString echoBase64 echoNestedComplexType echoHexBinary echoComplexTypeMultiOccurs echoIntegerMultiOccurs echoComplexType echoInteger echoBoolean echoSimpleTypesAsComplexType echoVoidSoapHeader echoEnum echoChoice echoStringMultiOccurs echoAnyElement"/>
+
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeaderResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeaderResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfSOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfSOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfString" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ChoiceComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ChoiceComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeResponse" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElement" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexTypeComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexTypeComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElementResponse&gt;return" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponseReturn" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeComplexTypeRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeComplexTypeRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfInt" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfInt" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPMultiOccursComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPMultiOccursComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfFloat" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.ArrayOfFloat" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:echoMeStringRequest" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.echo.EchoMeStringRequest" xmlns:ns="http://soapinterop.org/echoheader/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory" encodingStyle="" qname="ns:Enum" serializer="org.apache.axis.encoding.ser.EnumSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.Enum" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoVoidSoapHeader" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoVoidSoapHeader" xmlns:ns="http://soapinterop.org"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:ArrayOfString" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.ArrayOfString" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyTypeResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyTypeResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;echoAnyElementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementResponse" xmlns:ns="http://soapinterop.org/"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:SOAPComplexType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.xsd.SOAPComplexType" xmlns:ns="http://soapinterop.org/xsd"/>
+      <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns:&gt;&gt;echoAnyElement&gt;inputAny" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:test.wsdl.interop4.groupi.EchoAnyElementInputAny" xmlns:ns="http://soapinterop.org/"/>
+  </ns1:service>
+</ns1:deployment></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin>Done processing</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
+=======================================================
+= Elapsed: 109 milliseconds
+= In message: <?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><m:quit xmlns:m="http://xml.apache.org/axis/wsdd/"/></soapenv:Body></soapenv:Envelope>
+= Out message: <?xml version="1.0" encoding="utf-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><Admin> quitting.</Admin></soapenv:Body></soapenv:Envelope>
+=======================================================
