@@ -2,7 +2,7 @@
 
 Name:          axis
 Version:       1.2.1
-Release:       7.3%{?dist}
+Release:       7.5%{?dist}
 Epoch:         0
 Summary:       A SOAP implementation in Java
 License:       ASL 2.0
@@ -17,6 +17,7 @@ Patch5:        %{name}-build_xml.patch
 Patch6:        %{name}-java16.patch
 # CVE-2012-5784: Does not verify that the server hostname matches X.509 certificate name
 Patch7:        %{name}-CVE-2012-5784.patch
+Patch8:        %{name}-CVE-2014-3596-gcj.patch
 BuildRequires: jpackage-utils >= 0:1.5
 BuildRequires: java-devel
 BuildRequires: ant >= 0:1.6, ant-nodeps
@@ -90,6 +91,7 @@ Documentation for %{name}.
 %patch5
 %patch6 -b .orig
 %patch7 -p1 -b .orig
+%patch8 -p1 -b .orig
 
 # Remove provided binaries
 find . -name "*.jar" -exec rm -f {} \;
@@ -183,6 +185,15 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/*
 
 %changelog
+* Thu Sep 04 2014 Michal Srb <msrb@redhat.com> - 0:1.2.1-7.5
+- Fix MITM security vulnerability
+- Use GCJ friendly patch
+- Resolves: CVE-2014-3596
+
+* Wed Sep 03 2014 Michal Srb <msrb@redhat.com> - 0:1.2.1-7.4
+- Fix MITM security vulnerability
+- Resolves: CVE-2014-3596
+
 * Mon Jan 21 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 0:1.2.1-7.3
 - Add missing connection hostname check against X.509 certificate name
 - Resolves: CVE-2012-5784
